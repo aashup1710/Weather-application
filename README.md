@@ -28,7 +28,7 @@ To run the weather application locally, you need to have the following:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/weather-application.git
+gh repo clone aashup1710/Weather-application
 ```
 
 2. Open the project directory:
