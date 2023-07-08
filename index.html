@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WEATHER APPLICATION</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"
+  ></script>
+  <script defer src="tefv.js"></script>
+
+
+    
+    <div>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Weather Application</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="use.html">How to Use?</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="https://github.com/aashup1710">Link</a>
+              </li>
+
+            </ul>
+
+            <form class="d-flex" >
+              <input
+                id="city"
+                class="form-control me-2"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+            </form>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+    
+
+    <div style="background-image: url('world.png');">
+      <br>
+      <h1 style="text-align: center" >Current Weather of <span id="cityName"></span></h1>
+
+      <br>
+      <br>
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center" style="padding: auto;">
+        
+        <div class="col" >
+          <div class="card mb-4 rounded-3 shadow-sm border-primary" >
+            <div class="card-header py-3 text-bg-primary border-primary">
+              <h4 class="my-0 fw-normal">Temperature</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">
+                <span id="temp"></span><small class="text-body-secondary fw-light">℃</small>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Minimum temp is <span id="min_temp"></span></li>
+                <li>Maximum Temp is <span id="max_temp"></span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-primary">
+            <div class="card-header py-3 text-bg-primary border-primary">
+              <h4 class="my-0 fw-normal">Humidity</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">
+                <span id="humidity"></span><small class="text-body-secondary fw-light">/mo</small>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Cloud pct is <span id="cloud_pct"></span></li>
+                <li>Feels like <span id="feels_like"></span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-primary">
+            <div class="card-header py-3 text-bg-primary border-primary">
+              <h4 class="my-0 fw-normal">Wind Flow</h4>
+            </div>
+            <div class="card-body"  >
+              <h1 class="card-title pricing-card-title">
+                <span id="wind_speed"></span><small class="text-body-secondary fw-light">/mo</small>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Sunrise is <span id="sunrise"></span> </li>
+                <li>Sunset is <span id="sunset"></span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="card mb-4 rounded-5 border-primary" style="border-width: auto; " >
+        <h2 class="display-5 text-center mb-2 " style="text-align: center; margin: auto;">Weather of some common Time Zones</h2>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th style="width: 25%;"><b><u>CITY</u></b></th>
+              <th style="width: 7.5%">Temperature <small class="text-body-secondary fw-light">(℃)</small> </th>
+              <th style="width: 7.5%">Cloud_pct</th>
+              <th style="width: 7.5%">Feels_like</th>
+              <th style="width: 7.5%">Humidity</th>
+              <th style="width: 7.5%">Min_temp <small class="text-body-secondary fw-light">(℃)</small></th>
+              <th style="width: 7.5%">Max_temp <small class="text-body-secondary fw-light">(℃)</small></th>
+              <th style="width: 7.5%">Wind_speed <small class="text-body-secondary fw-light">(KMPH)</small></th>
+              <th style="width: 7.5%">Wind_degrees</th>
+              <th style="width: 7.5%">Sunrise</th>
+              <th style="width: 7.5%">Sunset</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            
+            <tr>
+              <th style="width: 25%;">Lucknow</th>
+                
+                <th style="width: 7.5%"><span id="temp1"></span></th>
+                <th style="width: 7.5%"><span id="cloud_pct1"></span></th>
+                <th style="width: 7.5%"><span id="feels_like1"></span></th>
+                <th style="width: 7.5%"><span id="humidity1"></span></th>
+                <th style="width: 7.5%"><span id="min_temp1"></span></th>
+                <th style="width: 7.5%"><span id="max_temp1"></span></th>
+                <th style="width: 7.5%"><span id="wind_speed1"></span></th>
+                <th style="width: 7.5%"><span id="wind_degrees1"></span></th>
+                <th style="width: 7.5%"><span id="sunrise1"></span></th>
+                <th style="width: 7.5%"><span id="sunset1"></span></th>
+              
+            </tr>
+
+            <tr>
+              <th style="width: 25%;">Gorakhpur</th>
+                
+              <th style="width: 7.5%"><span id="temp2"></span></th>
+              <th style="width: 7.5%"><span id="cloud_pct2"></span></th>
+              <th style="width: 7.5%"><span id="feels_like2"></span></th>
+              <th style="width: 7.5%"><span id="humidity2"></span></th>
+              <th style="width: 7.5%"><span id="min_temp2"></span></th>
+              <th style="width: 7.5%"><span id="max_temp2"></span></th>
+              <th style="width: 7.5%"><span id="wind_speed2"></span></th>
+              <th style="width: 7.5%"><span id="wind_degrees2"></span></th>
+              <th style="width: 7.5%"><span id="sunrise2"></span></th>
+              <th style="width: 7.5%"><span id="sunset2"></span></th>
+              
+            </tr>
+
+            <tr>
+              <th style="width: 25%;">Bangalore</th>
+                
+              <th style="width: 7.5%"><span id="temp3"></span</th>
+              <th style="width: 7.5%"><span id="cloud_pct3"></span></th>
+              <th style="width: 7.5%"><span id="feels_like3"></span></th>
+              <th style="width: 7.5%"><span id="humidity3"></span></th>
+              <th style="width: 7.5%"><span id="min_temp3"></span</th>
+              <th style="width: 7.5%"><span id="max_temp3"></span></th>
+              <th style="width: 7.5%"><span id="wind_speed3"></span></th>
+              <th style="width: 7.5%"><span id="wind_degrees3"></span></th>
+              <th style="width: 7.5%"><span id="sunrise3"></span></th>
+              <th style="width: 7.5%"><span id="sunset3"></span></th>
+              
+            </tr>
+
+            <tr>
+              <th style="width: 25%;">Gujarat</th>
+                
+              <th style="width: 7.5%"><span id="temp4"></span></th>
+              <th style="width: 7.5%"><span id="cloud_pct4"></span></th>
+              <th style="width: 7.5%"><span id="feels_like4"></span></th>
+              <th style="width: 7.5%"><span id="humidity4"></span></th>
+              <th style="width: 7.5%"><span id="min_temp4"></span></th>
+              <th style="width: 7.5%"><span id="max_temp4"></span></th>
+              <th style="width: 7.5%"><span id="wind_speed4"></span></th>
+              <th style="width: 7.5%"><span id="wind_degrees4"></span></th>
+              <th style="width: 7.5%"><span id="sunrise4"></span></th>
+              <th style="width: 7.5%"><span id="sunset4"></span></th>
+              
+            </tr>
+
+            <tr>
+              <th style="width: 25%;">Itanagar</th>
+                
+              <th style="width: 7.5%"><span id="temp5"></span></th>
+              <th style="width: 7.5%"><span id="cloud_pct5"></span></th>
+              <th style="width: 7.5%"><span id="feels_like5"></span></th>
+              <th style="width: 7.5%"><span id="humidity5"></span></th>
+              <th style="width: 7.5%"><span id="min_temp5"></span></th>
+              <th style="width: 7.5%"><span id="max_temp5"></span></th>
+              <th style="width: 7.5%"><span id="wind_speed5"></span></th>
+              <th style="width: 7.5%"><span id="wind_degrees5"></span></th>
+              <th style="width: 7.5%"><span id="sunrise5"></span></th>
+              <th style="width: 7.5%"><span id="sunset5"></span></th>
+              
+            </tr>
+          </tbody>
+          
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
